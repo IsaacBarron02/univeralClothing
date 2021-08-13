@@ -1,0 +1,43 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+        <div class="authBlock">
+
+            <h3>Iniciar Sesion</h3>
+
+            <div class="formGroup">
+                <input type="email" class="form-control" placeholder="E-Mail"
+                    #userName required />
+            </div>
+
+            <div class="formGroup">
+                <input type="password" class="form-control" placeholder="Contraseña"
+                    #userPassword required />
+            </div>
+
+            <div class="formGroup">
+                <input type="button" class="btn btn-primary btn-block" value="Iniciar Sesión"
+                    (click)="authService.login(userName.value,userPassword.value)" />
+            </div>
+<!--
+            <div class="formGroup">
+                <button type="button" class="btn btn-danger btn-block"
+                    (click)="authService.googleAuth()">
+                Iniciar Sesión con Google
+            </button>
+            </div>
+-->
+
+            <div class="forgotPassword">
+                <span routerLink="/forgot-password">¿Olvidaste la contraseña?</span>
+            </div>
+
+        </div>
+
+<!--
+        <div class="redirectToLogin">
+            <span>¿Nuevo Usuario?<span class="redirect" routerLink="/registro">Registrate</span></span>
+        </div>
+-->
+
+    </div>
+</div>

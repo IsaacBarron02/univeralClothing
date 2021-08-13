@@ -1,0 +1,118 @@
+<div>&nbsp;</div>
+
+<div *ngIf="authService.userState as user"> &nbsp;</div>
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark purple lighten-1 " [containerInside]="false" >
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" >DASHBOARD </a></mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/listaProductos'">Productos<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/listaCategorias'">Categorias</a>
+        </li>
+  
+      </ul>
+      <!-- Links -->
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+
+        <li class="nav-item avatar dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <img src="" alt="" class="img-fluid rounded-circle z-depth-0"></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <!--<button type="button" (click)="authService.cerrarSesion()">Cerrar Sesion</button>-->
+              <a class="dropdown-item waves-light" mdbWavesEffect href="authService.cerrarSesion()">Log out</a>
+          </div>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
+
+
+
+
+
+
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">SECCION DE CATEGORIAS</span>
+  </nav>
+  <div>&nbsp;</div>
+
+<div class="row justify-content-center ">
+<div class="col-sm-4">
+    <h4>Alta de Categorias</h4>
+    <p>
+        <label>Nombre</label>
+       <input type="text" class="form-control" [(ngModel)]="categoria.nombre" />
+    </p>
+    <p>
+        <label>Descripcion</label>
+       <input type="text" class="form-control" [(ngModel)]="categoria.descripcion" />
+    </p>
+    <p>
+        <label>Url Foto</label>
+       <input type="text" class="form-control" [(ngModel)]="categoria.urlPhoto" />
+    </p>
+    <p>
+        <label>Id de la Categoria</label>
+       <input type="text" class="form-control" [(ngModel)]="categoria.idCat" />
+    </p>
+
+    <table class="">
+        <tr>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="this.create()">
+                    Insertar
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-warning" (click)="this.update()">
+                    Modificar
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="this.delete(categoria.id)">
+                    Eliminar
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="this.limpiar()">
+                    Limpiar
+                </button>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+<div class="col-sm-6">
+    <h4>Lista Laptos</h4>
+    <div>&nbsp;</div>
+<table class="table " >
+    <thead>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>ID de la Categoria</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of categorias" (click)="selectCategoria(c)">
+            <td>{{c.nombre}}</td>
+            <td>{{c.descripcion}}</td>
+            <td>{{c.idCat}}</td>
+        </tr>
+    </tbody>
+
+</table>
+</div>
+</div>

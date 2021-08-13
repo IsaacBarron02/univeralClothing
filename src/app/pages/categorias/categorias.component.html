@@ -1,0 +1,65 @@
+
+<div class="row display-4">
+    &nbsp;
+    </div>
+    <div class="row">
+        <div class="col text-center ">
+            <h1 class="display-4"><small>Conoce Nuestros Productos !</small> </h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3 mx-auto my-5" *ngFor="let card of categorias">
+            <mdb-card>
+              <mdb-card-img [src]="card.urlPhoto" alt="Card image cap">
+              </mdb-card-img>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>{{card.nombre}}</h4>
+                </mdb-card-title>
+      
+                <mdb-card-text>
+                  {{card.descripcion}}
+                </mdb-card-text>
+      
+                <!--<button mdbBtn color="primary">Vamos!</button>-->
+
+                <!--<a routerLink="/prodCategoria">go</a>-->
+
+               <!-- <a [routerLink]="['/prodCategoria']">Vamos!</a> -->
+
+               <!--<a [routerLink]="['/prodCategoria', card.idCat]">Goo!</a>-->
+               
+               <a [routerLink]="['/prodCategoria',card.idCat]" class="btn btn-primary"  >Vamos!</a>
+
+
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    
+    <!--
+    <div class="container">
+        
+        <div class="row" >
+    
+            <div class="card" style="width: 18rem;">
+                <img src="https://res.cloudinary.com/univeralclothing/image/upload/v1617749711/imagesUniveral/Products/1_xtdxht.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Quirurgicos</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary" >Vamos!</a>
+                </div>
+            </div>
+            <div class="col sm-1">&nbsp;</div>
+        </div>
+    
+    </div>
+     -->

@@ -1,0 +1,40 @@
+<!--ESTE NO SE MOSTRARA YA QUE SOLO QUEREMOS QUE SE LOGIE EL ADMIN-->
+
+
+<div class="displayTable">
+    <div class="displayTableCell">
+        <div class="authBlock">
+
+            <h3>Nuevo Usuario</h3>
+
+            <div class="formGroup">
+                <input type="email" class="form-control" placeholder="E-Mail"
+                    #userName required />
+            </div>
+
+            <div class="formGroup">
+                <input type="password" class="form-control" placeholder="Contraseña"
+                    #userPassword required />
+            </div>
+
+            <div class="formGroup">
+                <input type="button" class="btn btn-primary btn-block" value="Registrarme"
+                    (click)="authService.registrar(userName.value,userPassword.value)" />
+            </div>
+
+            <div class="formGroup">
+                <button type="button" class="btn btn-danger btn-block"
+                    (click)="authService.googleAuth()">
+                Continuar con Google
+            </button>
+            </div>
+
+        </div>
+
+
+        <div class="redirectToLogin">
+            <span>¿Ya tienes cuentas?<span class="redirect" routerLink="/login">Inicia Sesion</span></span>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,44 @@
+
+<div class="row display-4">
+    &nbsp;
+    </div>
+    <div class="row">
+        <div class="col text-center ">
+            <h1 class="display-4"><small>Conoce Nuestros Productos !</small> </h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+   
+
+                    <div class="col-md-3 mx-auto my-5" *ngFor="let card of prouctos" >
+                        <mdb-card *ngIf="idCat==card.categoria">
+                            <mdb-card-img [src]="card.urlPhoto" alt="Card image cap">
+                            </mdb-card-img>
+                            <mdb-card-body>
+                                <mdb-card-title>
+                                    <h4>{{card.name}}</h4>
+                                </mdb-card-title>
+        
+                                <mdb-card-text>
+                                    {{card.description}}
+                                </mdb-card-text>
+        
+                                    <!--<button mdbBtn color="primary">Vamos!</button>-->
+
+                                   <!-- <a routerLink="/prodCategoria">go</a> -->
+
+                                    <!-- <a [routerLink]="['/prodCategoria']">Vamos!</a> -->
+
+                                    <!--<a [routerLink]="['/prodCategoria', card.idCat]">Goo!</a>-->
+                    
+                                    <a [routerLink]="['/detailProduct',card.id]" class="btn btn-primary"  >Vamos!</a>
+                            </mdb-card-body>
+                        </mdb-card>
+        
+                </div>
+            </div>
+
+    </div>

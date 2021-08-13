@@ -1,0 +1,46 @@
+
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light blue-grey lighten-5 unique-color fixed-top" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" [routerLink]="'/home'">
+        <img src="https://res.cloudinary.com/univeralclothing/image/upload/v1617747055/imagesUniveral/Logo_fcjian.jpg" width="70" height="30" alt="">
+    </a>
+
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/home'">Home<span class="sr-only">(current)</span></a>
+        </li>
+        
+  
+      </ul>
+      <!-- Links -->
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="btn-group" mdbDropdown>
+              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                <button class="btn" [routerLink]="'/login'">Login</button>
+                <!--<a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>-->
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
